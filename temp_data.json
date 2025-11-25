@@ -1,0 +1,19 @@
+
+// ye sab smjhne k liye the ki  vote kese initialize hoga
+{
+    "neme" : "Narendra moji",
+    "party": "BJP",
+    "age": 71,
+    "votes": [
+        {
+            
+            "user": "31237687912813",   // ye mongodb id se hai user ki jo ,
+            "votedAt": "2025-25-12T08:00:00:00z" // ye time bta rh hai kis time me vote diya tha 
+        },
+        {
+            "user": "31237686713",
+            "votedAt": "2025-26-12T08:01:00:00z"
+        }
+    ]
+    "voteCount": 2  // becouse jisne user utne vote count
+}
