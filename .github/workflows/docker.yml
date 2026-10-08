@@ -24,3 +24,6 @@ jobs:
 
       - name: Push Docker image
         run: docker push ramish16/voting-app:latest
+
+      - name: Trigger Render deployment
+        run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
