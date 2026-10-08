@@ -38,6 +38,7 @@ router.post('/', jwtAuthMiddleware, async (req, res) =>{
     }
 })
 
+// update candidate data
 router.put('/:candidateID', jwtAuthMiddleware, async (req, res)=>{
     try{
         if(!checkAdminRole(req.user.id))
@@ -63,6 +64,7 @@ router.put('/:candidateID', jwtAuthMiddleware, async (req, res)=>{
     }
 })
 
+// delete candidate data
 router.delete('/:candidateID', jwtAuthMiddleware, async (req, res)=>{
     try{
         if(!checkAdminRole(req.user.id))
@@ -70,7 +72,7 @@ router.delete('/:candidateID', jwtAuthMiddleware, async (req, res)=>{
         
         const candidateID = req.params.candidateID; // Extract the id from the URL parameter
 
-        const response = await Candidate.findByIdAndDelete(candidateID);
+        const response = await Candidate.findByIdAndDelete(candidateID); 
 
         if (!response) {
             return res.status(404).json({ error: 'Candidate not found' });

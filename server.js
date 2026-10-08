@@ -16,6 +16,6 @@ const candidateRoutes = require('./Routes/candidateRoutes');
 app.use('/user', userRoutes);
 app.use('/candidate', candidateRoutes);
 
-app.listen(PORT , () =>{
-    console.log("server is running on port 300")
-})
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running on port ${PORT}`);
+});

@@ -55,9 +55,12 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.pre('save', async function(next){
+
+    // this current user document ko represent karta hai.
     const person = this;
 
-    // Hash the password only if it has been modified (or is new)
+    // Hash the password only if it has been modified (or is new) 
+    // return next() aage step ka run nhii krega 
     if(!person.isModified('password')) return next();
     try{
         // hash password generation
